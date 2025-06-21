@@ -246,7 +246,7 @@
   <img class="slide" src="old4.jpg" alt="Photo 5">
   <img class="slide" src="old5.jpg" alt="Photo 6">
   <img class="slide" src="old6.jpg" alt="Photo 7">
-  <img class="slide" src="old7.gif alt="Photo 8">
+  <img class="slide" src="old7.gif" alt="Photo 8">
   <img class="slide" src="old8.jpg" alt="Photo 9">
   <img class="slide" src="old9.jpg" alt="Photo 10">
 </div>
@@ -275,6 +275,22 @@
 
   </div>
 </section>
+<script>
+  let slideIndex = 0;
+  const slides = document.getElementsByClassName("slide");
+
+  function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2500); // 2.5 seconds per slide
+  }
+
+  showSlides();
+</script>
 
     <!-- RSVP Form -->
     <form id="rsvp-form">

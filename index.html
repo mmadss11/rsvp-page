@@ -78,11 +78,24 @@
       background-color: #f48fb1;
     }
 
-    .attire-samples {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-    }
+.attire-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.attire-image {
+  max-width: 300px;
+  width: 100%;
+  margin: 20px auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.attire-samples {
+  justify-content: center;
+}
+
 
     .color-box {
       width: 60px;
@@ -204,7 +217,8 @@
 
     <!-- Attire Section -->
     <h3>✨ Attire</h3>
-    <p>Please wear pastel colors: Pink, Blue, or Lilac</p>
+  <p>Please wear pastel colors: Pink, Blue, or Lilac</p>
+  <img src="attire.png" alt="Attire Inspiration" class="attire-image">
     <div class="attire-samples">
       <div class="color-box pink"></div>
       <div class="color-box blue"></div>

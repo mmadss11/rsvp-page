@@ -157,23 +157,50 @@
       <img src="invitation1.jpg" alt="Wedding Invitation">
     </div>
 
-    <!-- RSVP Form -->
-    <form onsubmit="redirectToGoogleForm(event)">
-      <input type="text" id="name" placeholder="Complete Name" required>
-      <input type="text" id="contact" placeholder="Contact Number" required>
-      <input type="email" id="email" placeholder="Email Address" required>
-      <select id="attendance" required>
-        <option value="">Will you attend?</option>
-        <option value="I will attend">I will attend</option>
-        <option value="I will not attend">I will not attend</option>
-      </select>
-      <textarea id="message" placeholder="Leave a message or special request..." rows="4"></textarea>
-      <button type="submit">Send My RSVP</button>
-    </form>
+<!-- RSVP Form -->
+<form id="rsvp-form">
+  <input type="text" name="name" placeholder="Complete Name" required>
+  <input type="text" name="contact" placeholder="Contact Number" required>
+  <input type="email" name="email" placeholder="Email Address" required>
+  <select name="attendance" required>
+    <option value="">Will you attend?</option>
+    <option value="I will attend">I will attend</option>
+    <option value="I will not attend">I will not attend</option>
+  </select>
+  <textarea name="message" placeholder="Leave a message or special request..." rows="4"></textarea>
+  <button type="submit">Send My RSVP</button>
+</form>
 
-    <div class="confirmation" id="confirmation">
-      🎉 Thank you for your RSVP! You are now being redirected 💖
-    </div>
+<div class="confirmation" id="confirmation">
+  🎉 Thank you for your RSVP! Your response has been recorded 💖
+</div>
+
+<script>
+  document.getElementById("rsvp-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzj-I-Rih0a7qwEfYzCHW-DR-Q0vQQsXaMiDnRtOZszue-pVXeYu2sT-nb84SAJoLFG/exec"; // Replace with your own
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: data
+    })
+    .then(response => {
+      if (response.ok) {
+        document.getElementById("confirmation").style.display = "block";
+        form.reset();
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    })
+    .catch(error => {
+      console.error("Error!", error.message);
+    });
+  });
+</script>
+
 
     <!-- Attire Section -->
     <h3>✨ Attire</h3>

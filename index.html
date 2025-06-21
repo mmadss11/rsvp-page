@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Whimsical Fairytale RSVP</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mc and Jean RSVP</title>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Parisienne&display=swap" rel="stylesheet">
   <style>
     body {
@@ -46,15 +46,27 @@
       font-size: 36px;
       color: #6b3e6b;
       margin-bottom: 10px;
+      text-align: center;
     }
 
     p {
       font-size: 16px;
       line-height: 1.6;
+      text-align: center;
     }
 
-    input, select, textarea {
-      width: 100%;
+    form#rsvp-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    form#rsvp-form input,
+    form#rsvp-form select,
+    form#rsvp-form textarea {
+      width: 50%;
+      min-width: 250px;
+      max-width: 400px;
       padding: 12px;
       margin: 10px 0;
       border: 1px solid #ccc;
@@ -63,7 +75,7 @@
       font-family: 'Josefin Sans', sans-serif;
     }
 
-    button {
+    form#rsvp-form button {
       background-color: #f7c1e3;
       color: #333;
       padding: 12px 20px;
@@ -71,37 +83,53 @@
       border-radius: 8px;
       font-size: 18px;
       cursor: pointer;
-      margin-top: 10px;
+      margin-top: 20px;
+      display: block;
     }
 
-    button:hover {
+    form#rsvp-form button:hover {
       background-color: #f48fb1;
     }
 
-.attire-section {
-  text-align: center;
-  margin-top: 40px;
-}
+    .attire-section {
+      text-align: center;
+      margin-top: 40px;
+    }
 
-.attire-image {
-  max-width: 300px;
-  width: 100%;
-  margin: 20px auto;
-  display: block;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
+    .attire-image {
+      max-width: 300px;
+      width: 100%;
+      margin: 20px auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
 
-.attire-samples {
-  justify-content: center;
-}
-
+    .attire-samples {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
 
     .color-box {
       width: 60px;
       height: 60px;
       border-radius: 8px;
       border: 2px solid #fff;
+    }
+
+    .color-sample {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .color-label {
+      text-align: center;
+      margin-top: 5px;
+      font-weight: bold;
+      font-size: 14px;
     }
 
     .pink { background-color: #f8c8dc; }
@@ -170,59 +198,43 @@
       <img src="invitation1.jpg" alt="Wedding Invitation">
     </div>
 
-<!-- RSVP Form -->
-<form id="rsvp-form">
-  <input type="text" name="name" placeholder="Complete Name" required>
-  <input type="text" name="contact" placeholder="Contact Number" required>
-  <input type="email" name="email" placeholder="Email Address" required>
-  <select name="attendance" required>
-    <option value="">Will you attend?</option>
-    <option value="I will attend">I will attend</option>
-    <option value="I will not attend">I will not attend</option>
-  </select>
-  <textarea name="message" placeholder="Leave a message or special request..." rows="4"></textarea>
-  <button type="submit">Send My RSVP</button>
-</form>
+    <!-- RSVP Form -->
+    <form id="rsvp-form">
+      <input type="text" name="name" placeholder="Complete Name" required>
+      <input type="text" name="contact" placeholder="Contact Number" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <select name="attendance" required>
+        <option value="">Will you attend?</option>
+        <option value="I will attend">I will attend</option>
+        <option value="I will not attend">I will not attend</option>
+      </select>
+      <textarea name="message" placeholder="Leave a message or special request..." rows="4"></textarea>
+      <button type="submit">Send My RSVP</button>
+    </form>
 
-<div class="confirmation" id="confirmation">
-  🎉 Thank you for your RSVP! Your response has been recorded 💖
-</div>
-
-<script>
-  document.getElementById("rsvp-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const form = e.target;
-    const data = new FormData(form);
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzj-I-Rih0a7qwEfYzCHW-DR-Q0vQQsXaMiDnRtOZszue-pVXeYu2sT-nb84SAJoLFG/exec"; // Replace with your own
-
-    fetch(scriptURL, {
-      method: "POST",
-      body: data
-    })
-    .then(response => {
-      if (response.ok) {
-        document.getElementById("confirmation").style.display = "block";
-        form.reset();
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
-    })
-    .catch(error => {
-      console.error("Error!", error.message);
-    });
-  });
-</script>
-
+    <div class="confirmation" id="confirmation">
+      🎉 Thank you for your RSVP! Your response has been recorded 💖
+    </div>
 
     <!-- Attire Section -->
-    <h3>✨ Attire</h3>
-  <p>Please wear pastel colors: Pink, Blue, or Lilac</p>
-  <img src="attire.png" alt="Attire Inspiration" class="attire-image">
-    <div class="attire-samples">
-      <div class="color-box pink"></div>
-      <div class="color-box blue"></div>
-      <div class="color-box lilac"></div>
+    <div class="attire-section">
+      <h3>✨ Attire</h3>
+      <p>Please wear pastel colors: Pink, Blue, or Lilac</p>
+      <img src="imageattire.png" alt="Attire Inspiration" class="attire-image">
+      <div class="attire-samples">
+        <div class="color-sample">
+          <div class="color-box pink"></div>
+          <div class="color-label">Pink</div>
+        </div>
+        <div class="color-sample">
+          <div class="color-box blue"></div>
+          <div class="color-label">Blue</div>
+        </div>
+        <div class="color-sample">
+          <div class="color-box lilac"></div>
+          <div class="color-label">Lilac</div>
+        </div>
+      </div>
     </div>
 
     <!-- Entourage Section -->
@@ -242,23 +254,29 @@
       }
     }
 
-    function redirectToGoogleForm(e) {
+    document.getElementById("rsvp-form").addEventListener("submit", function(e) {
       e.preventDefault();
 
-      const name = document.getElementById('name').value;
-      const contact = document.getElementById('contact').value;
-      const email = document.getElementById('email').value;
-      const attendance = document.getElementById('attendance').value;
+      const form = e.target;
+      const data = new FormData(form);
+      const scriptURL = "https://script.google.com/macros/s/AKfycbzj-I-Rih0a7qwEfYzCHW-DR-Q0vQQsXaMiDnRtOZszue-pVXeYu2sT-nb84SAJoLFG/exec"; // Replace with your actual script URL
 
-      // Pre-fill Google Form URL with query params
-      const formURL = `https://docs.google.com/forms/d/e/1FAIpQLScYkzj_qGZ6G2OT-vFvD5ErWgFlLZq8cd2wSWm0WrnhYzY14g/viewform?usp=pp_url&entry.2005620554=${encodeURIComponent(name)}&entry.1045781291=${encodeURIComponent(contact)}&entry.1065046570=${encodeURIComponent(email)}&entry.1166974658=${encodeURIComponent(attendance)}`;
-
-      // Show confirmation and redirect after delay
-      document.getElementById('confirmation').style.display = 'block';
-      setTimeout(() => {
-        window.open(formURL, '_blank');
-      }, 1000);
-    }
+      fetch(scriptURL, {
+        method: "POST",
+        body: data
+      })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById("confirmation").style.display = "block";
+          form.reset();
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.error("Error!", error.message);
+      });
+    });
   </script>
 </body>
 </html>

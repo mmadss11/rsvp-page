@@ -201,11 +201,16 @@
     display: block;
   }
 
-  .slideshow-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
+.slideshow-container img {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto;
+  display: block;
+}
+
 
   </style>
 </head>
@@ -236,9 +241,9 @@
     </div>
     
 <section id="our-story" style="padding: 2rem; background-color: #fffbe6; font-family: 'Josefin Sans', sans-serif;">
-  <h2 style="text-align: center; font-family: 'Parisienne', cursive; font-size: 2.5rem; color: #c49b66;">Our Story</h2>
-  <div style="text-align: center; margin: 2rem 0;">
- <div class="slideshow-container">
+<h2 style="text-align: center; font-family: 'Parisienne', cursive; font-size: 2.5rem; color: #c49b66;">Our Story</h2>
+
+<div class="slideshow-container">
   <img class="slide fade" src="photo10.jpg" alt="Photo 1">
   <img class="slide" src="old1.jpg" alt="Photo 2">
   <img class="slide" src="old2.jpg" alt="Photo 3">
@@ -250,6 +255,7 @@
   <img class="slide" src="old8.jpg" alt="Photo 9">
   <img class="slide" src="old9.jpg" alt="Photo 10">
 </div>
+
 
 </div>
 
@@ -291,6 +297,7 @@
 
   showSlides();
 </script>
+
 
     <!-- RSVP Form -->
     <form id="rsvp-form">

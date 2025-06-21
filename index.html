@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Whimsical Fairytale RSVP</title>
+  https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap
   <style>
     body {
-      font-family: 'Georgia', serif;
+      font-family: 'Quicksand', sans-serif;
       background: url('bg.jpg') no-repeat center center fixed;
       background-size: cover;
       position: relative;
@@ -18,7 +19,7 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+      background-color: rgba(0, 0, 0, 0.5);
       z-index: 0;
     }
 
@@ -34,36 +35,15 @@
     }
 
     h2, h3 {
-      font-family: 'Cursive', sans-serif;
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
       color: #6b3e6b;
+      margin-bottom: 10px;
     }
 
     p {
       font-size: 16px;
       line-height: 1.6;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-
-    button {
-      background-color: #f7c1e3;
-      color: #333;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      font-size: 18px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #f48fb1;
     }
 
     .attire-samples {
@@ -93,6 +73,25 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
+
+    .rsvp-button {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .rsvp-button a button {
+      background-color: #f7c1e3;
+      color: #333;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .rsvp-button a button:hover {
+      background-color: #f48fb1;
+    }
   </style>
 </head>
 <body>
@@ -113,15 +112,19 @@
       <img src="invitation1.jpg" alt="Wedding Invitation">
     </div>
 
-    <form action="https://forms.gle/gKSgy6zCvMZP8iss6" method="POST">
-      <input type="text" name="name" placeholder="Complete Name" required>
-      <input type="text" name="contact" placeholder="Contact Number" required>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <select name="attendance" required>
-        <option value="">Will you attend?</option>
-        <option value="Yes">Yes, I’ll be there!</option>
-        <option value="No">Sorry, I can’t make it</option>
-      </select>
-      <textarea name="message" placeholder="Leave a message or special request..." rows="4"></textarea>
-      <button type="submit">Send My RSVP</button>
+    <div class="rsvp-button">
+      https://forms.gle/gKSgy6zCvMZP8iss6
+    </div>
+
+    <h3>✨ Attire</h3>
+    <p>Please wear pastel colors: Pink, Blue, or Lilac</p>
+    <div class="attire-samples">
+      <div class="color-box pink"></div>
+      <div class="color-box blue"></div>
+      <div class="color-box lilac"></div>
+    </div>
+
+    <div class="image-section">
+      <h3>💐 Wedding Entourage</h3>
+      <img src="invitation3.jpg" alt="Wedding Entourage">
    

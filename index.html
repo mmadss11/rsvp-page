@@ -6,19 +6,28 @@
   <style>
     body {
       font-family: 'Georgia', serif;
-      background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background: url('YOUR_GENERATED_IMAGE_URL_HERE') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
-      text-align: center;
-      padding: 50px;
+      padding: 40px;
     }
 
-    .form-container {
+    .container {
       background: rgba(0, 0, 0, 0.6);
       padding: 30px;
       border-radius: 15px;
-      max-width: 500px;
+      max-width: 700px;
       margin: auto;
+    }
+
+    h2, h3 {
+      font-family: 'Cursive', sans-serif;
+      color: #ffe6f0;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
     }
 
     input, select, textarea {
@@ -44,22 +53,44 @@
       background-color: #f48fb1;
     }
 
-    h2 {
-      font-family: 'Cursive', sans-serif;
-      font-size: 36px;
-      margin-bottom: 20px;
+    .attire-samples {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
     }
+
+    .color-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      border: 2px solid #fff;
+    }
+
+    .pink { background-color: #f8c8dc; }
+    .blue { background-color: #c8e4f8; }
+    .lilac { background-color: #e6ccf5; }
   </style>
 </head>
 <body>
-  <div class="form-container">
-    <h2>You're Invited to a Magical Gathering!</h2>
-    <form action="https://forms.gle/rJeikHSYgHbjYvwQ9" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
+  <div class="container">
+    <h2>You're Invited to a Magical Celebration</h2>
+    <p>
+      We are truly honored to share this special occasion with our dear family and friends.
+      Your presence means a lot to us, and we sincerely hope you can join us in celebrating this joyful milestone.
+      However, we completely understand if you are unable to attend. Kindly take a moment to answer a few questions below to help us finalize the arrangements.
+    </p>
+    <p>
+      Please note that this invitation is intended for the named guest only. Additional guests will receive separate invitations directly from us, if applicable.
+      To ensure a smooth and intimate celebration, we kindly ask that only those formally invited attend the event.
+    </p>
+    <p>Thank you for your understanding and cooperation.</p>
+
+    <form action="https://forms.gle/gKSgy6zCvMZP8iss6" method="POST">
+      <input type="text" name="name" placeholder="Complete Name" required>
+      <input type="text" name="contact" placeholder="Contact Number" required>
+      <input type="email" name="email" placeholder="Email Address" required>
       <select name="attendance" required>
         <option value="">Will you attend?</option>
         <option value="Yes">Yes, I’ll be there!</option>
         <option value="No">Sorry, I can’t make it</option>
-      </select>
-      <textarea name="message" placeholder="Leave a message or special request..." rows
+     

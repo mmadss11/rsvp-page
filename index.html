@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Whimsical Fairytale RSVP</title>
-    <style>
+  
+  <style>
     body {
       font-family: 'Quicksand', sans-serif;
-      background: url('bg.jpg') no-repeat center center fixed;
+      background: url('bg.jpeg') no-repeat center center fixed;
       background-size: cover;
       position: relative;
       margin: 0;
@@ -96,7 +97,7 @@
 <body>
 
   <!-- Background music -->
-  <audio autoplay loop>
+  <audio autoplay loop muted>
     <source src="canond.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
@@ -119,18 +120,17 @@
     </div>
 
 
-
-  <div class="form-container">
-    <h2>You're Invited to a Magical Gathering!</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
+    <form action="https://forms.gle/cQ9yxxFz1RYHV3BVA" method="POST">
+      <input type="text" name="name" placeholder="Complete Name" required>
+      <input type="text" name="contact" placeholder="Contact Number" required>
+      <input type="email" name="email" placeholder="Email Address" required>
       <select name="attendance" required>
         <option value="">Will you attend?</option>
-        <option value="Yes">Yes, I’ll be there!</option>
-        <option value="No">Sorry, I can’t make it</option>
+        <option value="Yes">I will attend</option>
+        <option value="No">I will not attend</option>
       </select>
-      <textarea name="message" placeholder="Leave a message or special request..." rows
+      <textarea name="message" placeholder="Leave a message or special request..." rows="4"></textarea>
+      <button type="submit">Send My RSVP</button>
 
 
     <h3>✨ Attire</h3>
@@ -143,7 +143,7 @@
 
     <div class="image-section">
       <h3>💐 Wedding Entourage</h3>
-      <img src="invitation3.jpg" alt="Wedding Entourage">
+      <img src="invitation3.png" alt="Wedding Entourage">
     </div>
   </div>
 </body>

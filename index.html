@@ -225,7 +225,7 @@
 
 <body>
 
-<button class="music-toggle" onclick="toggleMusic()">🔊 Toggle Music</button>
+<button id="music-button" class="music-toggle" onclick="toggleMusic()">🔊 Toggle Music</button>
 
 <audio id="bg-music" loop>
   <source src="canond.mp3" type="audio/mpeg">
@@ -409,20 +409,24 @@
   });
 }
 
-  const music = document.getElementById('bg-music');
 
-  // Manual toggle button
+  const music = document.getElementById('bg-music');
+  const musicBtn = document.getElementById('music-button');
+
   function toggleMusic() {
     if (music.paused) {
       music.play();
+      musicBtn.innerText = '🔊 Music On';
     } else {
       music.pause();
+      musicBtn.innerText = '🔇 Music Off';
     }
   }
 
-  // Autoplay on first user interaction (click or tap)
   function enableMusicOnFirstTouch() {
-    music.play().catch(() => {
+    music.play().then(() => {
+      musicBtn.innerText = '🔊 Music On';
+    }).catch(() => {
       console.log('Autoplay blocked. User needs to interact again.');
     });
 

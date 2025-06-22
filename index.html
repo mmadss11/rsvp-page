@@ -10,9 +10,9 @@
       font-family: 'Josefin Sans', sans-serif;
       background: url('bg.jpeg') no-repeat center center fixed;
       background-size: cover;
-      position: relative;
       margin: 0;
       padding: 0;
+      position: relative;
     }
 
     body::before {
@@ -33,12 +33,6 @@
       max-width: 800px;
       margin: 40px auto;
       color: #333;
-      animation: fadeIn 2s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     h2, h3 {
@@ -90,7 +84,6 @@
     }
 
     .color-label {
-      text-align: center;
       margin-top: 5px;
       font-weight: bold;
       font-size: 14px;
@@ -122,7 +115,6 @@
       padding: 8px 16px;
       font-size: 14px;
       cursor: pointer;
-      font-family: 'Josefin Sans', sans-serif;
     }
 
     .img-small {
@@ -156,10 +148,12 @@
       display: block;
     }
 
-    .iframe {
+    iframe {
       border-radius: 15px;
       overflow: hidden;
+      width: 100%;
     }
+
   </style>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
@@ -176,30 +170,17 @@
   <div class="container">
     <h2>You're Invited to a Magical Celebration</h2>
     <p>We are truly honored to share this special occasion with our dear family and friends.</p>
-     <p>Your presence means a lot to us.</p>
-    <p>Please note this invitation is for the named guest only. Additional guests will receive separate invites.</p>
+    <p>Your presence means a lot to us.</p>
+    <p>This invitation is for the named guest only. Additional guests will receive separate invites.</p>
     <p>Thank you for your understanding and cooperation.</p>
-
     <div class="image-section">
       <img src="invitation1.jpg" alt="Wedding Invitation">
     </div>
   </div>
 
-  <!-- Our Story Section -->
-<section id="our-story" style="
-  padding: 2rem;
-  background-color: #fffbe6;
-  font-family: 'Josefin Sans', sans-serif;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  max-width: 800px;
-  margin: 40px auto;
-  position: relative;
-  z-index: 1;">
-
-  ">
-    <h2 style="text-align: center; font-family: 'Parisienne', cursive; font-size: 2.5rem; color: #c49b66;">Our Story</h2>
-
+  <!-- Our Story -->
+  <section id="our-story" style="padding: 2rem; background-color: #fffbe6; font-family: 'Josefin Sans', sans-serif; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 800px; margin: 40px auto; position: relative; z-index: 1;">
+    <h2 style="color: #c49b66;">Our Story</h2>
     <div class="slideshow-container">
       <img class="slide fade" src="old1.jpg" alt="Photo 1">
       <img class="slide" src="old2.jpg" alt="Photo 2">
@@ -211,9 +192,8 @@
       <img class="slide" src="old9.jpg" alt="Photo 9">
     </div>
 
-    <div style="max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.7; color: #333;">
-      <!-- Your love story paragraphs here -->
-       <p>It all started in October 2011 — ah yes, the year when <em>"Call Me Maybe"</em> was on repeat and I was just a guy trying to land a job near Mandaue. I didn’t notice her right away, but according to her, she already had her eyes on me — apparently impressed by my long sleeves, my cheerful smile, and my mysterious charm (or maybe it was just my shampoo).</p>
+    <div style="font-size: 1.1rem; line-height: 1.7; color: #333; padding-top: 1rem;">
+    <p>It all started in October 2011 — ah yes, the year when <em>"Call Me Maybe"</em> was on repeat and I was just a guy trying to land a job near Mandaue. I didn’t notice her right away, but according to her, she already had her eyes on me — apparently impressed by my long sleeves, my cheerful smile, and my mysterious charm (or maybe it was just my shampoo).</p>
 
     <p>Fast forward to Day 1 on the job: that's when <strong>I</strong> finally noticed <strong>her</strong>. She was the only girl who caught my eye — like, literally, my neck did a full turn. I was curious, but didn’t think much of it. I mean, I wasn’t planning to fall in love. But fate, as always, had other plans.</p>
 
@@ -230,28 +210,17 @@
 
     <p>Then came Rosabelle — our sweet, sassy little star who gave our lives even more purpose and joy. With her, everything felt right. That’s when I knew: it was time to make things official. With love in our hearts (and probably a Happy Meal nearby), I asked her to marry me.</p>
 
- 
-      <!-- Shortened for brevity -->
-      <p>...And here we are. Building our own happily ever after — one laugh, one sundae, and one beautiful moment at a time.</p>
+      <p>...and here we are, building our own happily ever after — one laugh, one sundae, and one moment at a time.</p>
     </div>
   </section>
 
-  <!-- RSVP Form (Google Form Embed) -->
-  <div style="
-    background: rgba(255,255,255,0.9);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    max-width: 800px;
-    margin: 40px auto;
-  ">
-    <h3 style="text-align: center; font-family: 'Parisienne', cursive;">📝 RSVP Form</h3>
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSeB5_C0oFbH1Xyn0XfaNlWOBSjNVTG57ZyLs-parJ3Vpe-g8g/viewform?embedded=true" 
-      width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  <!-- RSVP Form -->
+  <div style="background: rgba(255,255,255,0.9); padding: 2rem; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 800px; margin: 40px auto;">
+    <h3>📝 RSVP Form</h3>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeB5_C0oFbH1Xyn0XfaNlWOBSjNVTG57ZyLs-parJ3Vpe-g8g/viewform?embedded=true" height="1200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </div>
 
-  <!-- Attire Section -->
+  <!-- Attire -->
   <div class="attire-section">
     <h3>✨ Attire</h3>
     <p>Please wear pastel colors: Pink, Blue, or Lilac</p>
@@ -263,50 +232,39 @@
     </div>
   </div>
 
-  <!-- Entourage Section -->
-<div class="image-section">
-  <h3>💐 Wedding Entourage</h3>
-  <img src="invitation3.png" alt="Wedding Entourage">
-
-  <div style="max-width: 800px; margin: 2rem auto; background: rgba(255,255,255,0.85); border-radius: 15px; padding: 20px;">
-    <h2>Your presence is the greatest gift we could ask for.</h2>
-    <p>If you wish to bless us with a gift, a monetary contribution is preferred...</p>
-    <p>GCash: <span id="gcash-number">loading...</span></p>
-    <img src="gcash.jpeg" alt="gcash" class="img-small">
+  <!-- Entourage -->
+  <div class="image-section">
+    <h3>💐 Wedding Entourage</h3>
+    <img src="invitation3.png" alt="Wedding Entourage">
+    <div style="max-width: 800px; margin: 2rem auto; background: rgba(255,255,255,0.85); border-radius: 15px; padding: 20px;">
+      <h2>Your presence is the greatest gift we could ask for.</h2>
+      <p>If you wish to bless us with a gift, a monetary contribution is preferred...</p>
+      <p>GCash: <span id="gcash-number">loading...</span></p>
+      <img src="gcash.jpeg" alt="gcash" class="img-small">
+    </div>
   </div>
-</div>
-
 
   <!-- Scripts -->
   <script>
     const music = document.getElementById('bg-music');
     function toggleMusic() {
-      if (music.paused) {
-        music.play();
-      } else {
-        music.pause();
-      }
+      music.paused ? music.play() : music.pause();
     }
 
     // Slideshow
     let slideIndex = 0;
     const slides = document.getElementsByClassName("slide");
-
     function showSlides() {
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
+      for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
       slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
+      if (slideIndex > slides.length) slideIndex = 1;
       slides[slideIndex - 1].style.display = "block";
       setTimeout(showSlides, 2500);
     }
-
     showSlides();
 
-    // GCash number obfuscation
+    // GCash obfuscation
     document.getElementById("gcash-number").innerText = ['0917','726','7833'].join('');
   </script>
-
 </body>
 </html>

@@ -225,12 +225,13 @@
 
 <body>
 
-  <button class="music-toggle" onclick="toggleMusic()">🔊 Toggle Music</button>
+<button class="music-toggle" onclick="toggleMusic()">🔊 Toggle Music</button>
 
-  <audio id="bg-music" autoplay loop>
-    <source src="canond.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+<audio id="bg-music" loop>
+  <source src="canond.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 
   <div class="container">
     <h2>You're Invited to a Magical Celebration</h2>
@@ -410,21 +411,28 @@
 
   const music = document.getElementById('bg-music');
 
+  // Manual toggle button
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  }
+
+  // Autoplay on first user interaction (click or tap)
   function enableMusicOnFirstTouch() {
     music.play().catch(() => {
-      // optional: fallback UI if autoplay fails
-      console.log('Autoplay blocked until user interacts again');
+      console.log('Autoplay blocked. User needs to interact again.');
     });
 
-    // Only run once
     window.removeEventListener('click', enableMusicOnFirstTouch);
     window.removeEventListener('touchstart', enableMusicOnFirstTouch);
-  
+  }
 
-  // Listen for first interaction
   window.addEventListener('click', enableMusicOnFirstTouch);
   window.addEventListener('touchstart', enableMusicOnFirstTouch);
-    }
+
 
     // Slideshow
 function showSlides() {

@@ -400,16 +400,17 @@
 
   <!-- Scripts -->
   <script>
-    function copyGCash() {
-  const number = document.getElementById("gcash-number").innerText;
-  navigator.clipboard.writeText(number).then(() => {
-    alert("GCash number copied to clipboard!");
-  }).catch(() => {
-    alert("Copy failed. Please copy manually.");
-  });
-}
+  // Copy GCash Number
+  function copyGCash() {
+    const number = document.getElementById("gcash-number").innerText;
+    navigator.clipboard.writeText(number).then(() => {
+      alert("GCash number copied to clipboard!");
+    }).catch(() => {
+      alert("Copy failed. Please copy manually.");
+    });
+  }
 
-
+  // 🎵 Music Toggle
   const music = document.getElementById('bg-music');
   const musicBtn = document.getElementById('music-button');
 
@@ -437,22 +438,23 @@
   window.addEventListener('click', enableMusicOnFirstTouch);
   window.addEventListener('touchstart', enableMusicOnFirstTouch);
 
+  // 🎞️ Slideshow Fade
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slide");
 
-    // Slideshow
-function showSlides() {
-function showSlides() {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.remove("active");
+  function showSlides() {
+    slides.forEach((slide) => slide.classList.remove("active"));
+    slideIndex++;
+    if (slideIndex > slides.length) slideIndex = 1;
+    slides[slideIndex - 1].classList.add("active");
   }
-  slideIndex++;
-  if (slideIndex > slides.length) slideIndex = 1;
-  slides[slideIndex - 1].classList.add("active");
-}
 
-setInterval(showSlides, 3000);
+  if (slides.length) {
+    showSlides(); // Show first slide immediately
+    setInterval(showSlides, 3000); // Rotate every 3s
+  }
 
-
-
+  // ⏳ Countdown
   function updateCountdown() {
     const now = new Date().getTime();
     const target = new Date("August 8, 2025 15:00:00").getTime();
@@ -478,9 +480,9 @@ setInterval(showSlides, 3000);
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
+  // 🔒 GCash Obfuscation
+  document.getElementById("gcash-number").innerText = ['0917','726','7833'].join('');
+</script>
 
-    // GCash obfuscation
-    document.getElementById("gcash-number").innerText = ['0917','726','7833'].join('');
-  </script>
 </body>
 </html>

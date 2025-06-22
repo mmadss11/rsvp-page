@@ -378,9 +378,22 @@
 
   <!-- Scripts -->
   <script>
-    const music = document.getElementById('bg-music');
-    function toggleMusic() {
-      music.paused ? music.play() : music.pause();
+  const music = document.getElementById('bg-music');
+
+  function enableMusicOnFirstTouch() {
+    music.play().catch(() => {
+      // optional: fallback UI if autoplay fails
+      console.log('Autoplay blocked until user interacts again');
+    });
+
+    // Only run once
+    window.removeEventListener('click', enableMusicOnFirstTouch);
+    window.removeEventListener('touchstart', enableMusicOnFirstTouch);
+  }
+
+  // Listen for first interaction
+  window.addEventListener('click', enableMusicOnFirstTouch);
+  window.addEventListener('touchstart', enableMusicOnFirstTouch);
     }
 
     // Slideshow

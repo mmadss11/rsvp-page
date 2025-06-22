@@ -156,6 +156,53 @@
       overflow: hidden;
       width: 100%;
     }
+.flip-clock {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.flip-clock .unit {
+  background: #fffbe6;
+  border-radius: 12px;
+  padding: 15px 10px;
+  width: 70px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  animation: flip 0.8s ease-in-out;
+}
+
+.flip-clock .unit span {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #6b3e6b;
+}
+
+.flip-clock .unit label {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: #555;
+  text-transform: uppercase;
+}
+
+@keyframes flip {
+  0% { transform: rotateX(90deg); opacity: 0; }
+  100% { transform: rotateX(0); opacity: 1; }
+}
+
+@media (max-width: 500px) {
+  .flip-clock .unit {
+    width: 60px;
+    padding: 10px;
+  }
+  .flip-clock .unit span {
+    font-size: 1.5rem;
+  }
+}
 
   </style>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -176,6 +223,21 @@
 <p>However, we completely understand if you are unable to attend. Kindly take a moment to answer a few questions below to help us finalize the arrangements.</p>
 <p>Please note that this invitation is intended for the named guest only. Additional guests will receive separate invitations directly from us, if applicable. To ensure a smooth and intimate celebration, we kindly ask that only those formally invited attend the event.</p>
 <p>Thank you for your understanding and cooperation.</p>
+   
+    <!-- Fancy Flip Countdown Timer -->
+<div id="countdown-wrapper" style="max-width: 600px; margin: 40px auto; text-align: center; font-family: 'Josefin Sans', sans-serif;">
+  <h3 style="color: #6b3e6b; font-family: 'Parisienne', cursive; font-size: 2rem;">⏳ Countdown to Our Wedding</h3>
+  <div id="countdown" class="flip-clock">
+    <div class="unit"><span id="days">00</span><label>Days</label></div>
+    <div class="unit"><span id="hours">00</span><label>Hours</label></div>
+    <div class="unit"><span id="minutes">00</span><label>Minutes</label></div>
+    <div class="unit"><span id="seconds">00</span><label>Seconds</label></div>
+  </div>
+  <div id="countdown-done" style="display: none; font-size: 1.5rem; color: #c49b66; font-weight: bold; margin-top: 1rem;">
+    💍 It's Wedding Time!
+  </div>
+</div>
+
     <div class="image-section">
       <img src="invitation1.jpg" alt="Wedding Invitation">
     </div>
@@ -334,6 +396,32 @@
       setTimeout(showSlides, 2500);
     }
     showSlides();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const target = new Date("August 8, 2026 15:00:00").getTime();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      document.getElementById("countdown").style.display = "none";
+      document.getElementById("countdown-done").style.display = "block";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = String(days).padStart(2, '0');
+    document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+    document.getElementById("minutes").innerText = String(mins).padStart(2, '0');
+    document.getElementById("seconds").innerText = String(secs).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
 
     // GCash obfuscation
     document.getElementById("gcash-number").innerText = ['0917','726','7833'].join('');

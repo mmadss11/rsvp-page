@@ -125,21 +125,37 @@
       margin: 0 auto;
     }
 
-    .slideshow-container {
-      width: 100%;
-      max-width: 800px;
-      height: 600px;
-      position: relative;
-      margin: 2rem auto;
-      background: rgba(255, 255, 255, 0.85);
-      color: #333;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+<div class="slideshow-container">
+  <img class="slide fade" src="old1.jpg" alt="Photo 1">
+  <img class="slide" src="old2.gif" alt="Photo 2">
+  <img class="slide" src="old4.jpg" alt="Photo 4">
+  <img class="slide" src="old5.jpg" alt="Photo 5">
+  <img class="slide" src="old6.jpg" alt="Photo 6">
+  <img class="slide" src="old7.gif" alt="Photo 7">
+  <img class="slide" src="old10.jpg" alt="Photo 8">
+  <img class="slide" src="old9.jpg" alt="Photo 9">
+  <img class="slide" src="old11.jpeg" alt="Photo 10">
+  <img class="slide" src="old12.jpeg" alt="Photo 11">
+
+  <!-- Navigation buttons -->
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<!-- Dot navigation -->
+<div class="dot-container" style="text-align:center; margin-top: 15px;">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span>
+  <span class="dot" onclick="currentSlide(9)"></span>
+  <span class="dot" onclick="currentSlide(10)"></span>
+</div>
+
 
 .slide {
   position: absolute;
@@ -217,6 +233,48 @@
   .flip-clock .unit span {
     font-size: 1.2rem;
   }
+}
+/* Arrows */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 12px;
+  margin-top: -22px;
+  color: #6b3e6b;
+  font-weight: bold;
+  font-size: 28px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(255,255,255,0.7);
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(255, 192, 203, 0.8);
+}
+
+/* Dots */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #c8a2c8;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.active-dot, .dot:hover {
+  background-color: #6b3e6b;
 }
 
   </style>
@@ -439,20 +497,41 @@
   window.addEventListener('touchstart', enableMusicOnFirstTouch);
 
   // 🎞️ Slideshow Fade
-  let slideIndex = 0;
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Arrow controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Dot controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+// Display the slides
+function showSlides(n) {
+  let i;
   const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
 
-  function showSlides() {
-    slides.forEach((slide) => slide.classList.remove("active"));
-    slideIndex++;
-    if (slideIndex > slides.length) slideIndex = 1;
-    slides[slideIndex - 1].classList.add("active");
-  }
+  slides.forEach(slide => slide.classList.remove("active"));
+  dots.forEach(dot => dot.classList.remove("active-dot"));
 
-  if (slides.length) {
-    showSlides(); // Show first slide immediately
-    setInterval(showSlides, 3000); // Rotate every 3s
-  }
+  slides[slideIndex - 1].classList.add("active");
+  dots[slideIndex - 1].classList.add("active-dot");
+}
+
+// Optional: Auto-advance
+setInterval(() => {
+  plusSlides(1);
+}, 3000);
+
+
 
   // ⏳ Countdown
   function updateCountdown() {

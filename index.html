@@ -141,15 +141,20 @@
       justify-content: center;
     }
 
-    .slide {
-      display: none;
-      max-width: 100%;
-      max-height: 100%;
-    }
+.slide {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-    .slide.fade {
-      display: block;
-    }
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
 
     iframe {
       border-radius: 15px;
@@ -348,7 +353,7 @@
     ">🗺️ Open Google Maps Directions</a>
   </div>
 
-  <h4>📱 QR Codes for Quick Access</h4>
+  <h4>📱 Clickable QR Codes for Quick Access</h4>
 
   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 20px;">
 
@@ -376,7 +381,7 @@
     <!-- RSVP Form -->
   <div class="container">
     <h3>📝 RSVP Form</h3>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeB5_C0oFbH1Xyn0XfaNlWOBSjNVTG57ZyLs-parJ3Vpe-g8g/viewform?embedded=true" height="1200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeB5_C0oFbH1Xyn0XfaNlWOBSjNVTG57ZyLs-parJ3Vpe-g8g/viewform?embedded=true&hl=en" height="1200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </div>
   <!-- Gcash -->
    <div class="container">
@@ -422,16 +427,19 @@
     }
 
     // Slideshow
-    let slideIndex = 0;
-    const slides = document.getElementsByClassName("slide");
-    function showSlides() {
-      for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
-      slideIndex++;
-      if (slideIndex > slides.length) slideIndex = 1;
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 2500);
-    }
-    showSlides();
+function showSlides() {
+function showSlides() {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) slideIndex = 1;
+  slides[slideIndex - 1].classList.add("active");
+}
+
+setInterval(showSlides, 3000);
+
+
 
   function updateCountdown() {
     const now = new Date().getTime();

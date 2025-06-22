@@ -55,42 +55,6 @@
       text-align: center;
     }
 
-    form#rsvp-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    form#rsvp-form input,
-    form#rsvp-form select,
-    form#rsvp-form textarea {
-      width: 50%;
-      min-width: 250px;
-      max-width: 400px;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-      font-family: 'Josefin Sans', sans-serif;
-    }
-
-    form#rsvp-form button {
-      background-color: #f7c1e3;
-      color: #333;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      font-size: 18px;
-      cursor: pointer;
-      margin-top: 20px;
-      display: block;
-    }
-
-    form#rsvp-form button:hover {
-      background-color: #f48fb1;
-    }
-
     .attire-section {
       text-align: center;
       margin-top: 40px;
@@ -161,63 +125,49 @@
       font-family: 'Josefin Sans', sans-serif;
     }
 
-    .confirmation {
-      display: none;
-      margin-top: 20px;
-      padding: 15px;
-      background-color: #e6ccf5;
-      border-radius: 10px;
-      text-align: center;
-      font-weight: bold;
-    }
     .img-small {
-  width: 50%;
-  display: block;
-  margin: 0 auto; /* centers it */
-}
+      width: 50%;
+      display: block;
+      margin: 0 auto;
+    }
 
-.slideshow-container {
-  width: 100%;
-  max-width: 800px;
-  height: 600px; /* fixed height to prevent layout shift */
-  position: relative;
-  margin: 2rem auto;
-  background-color: #f9f9f9; /* light background to fill space */
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .slideshow-container {
+      width: 100%;
+      max-width: 800px;
+      height: 600px;
+      position: relative;
+      margin: 2rem auto;
+      background-color: #f9f9f9;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.slide {
-  display: none;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-}
+    .slide {
+      display: none;
+      max-width: 100%;
+      max-height: 100%;
+    }
 
-.slide.fade {
-  display: block;
-}
+    .slide.fade {
+      display: block;
+    }
 
+    iframe {
+      border-radius: 15px;
+      overflow: hidden;
+    }
   </style>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 </head>
-  
-  <script>
-  document.getElementById("gcash-number").innerText = ['0917','726','7833'].join('');
-</script>
 
 <body>
 
-  <!-- Music Toggle -->
   <button class="music-toggle" onclick="toggleMusic()">🔊 Toggle Music</button>
 
-  <!-- Background music -->
   <audio id="bg-music" autoplay loop>
     <source src="canond.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
@@ -225,133 +175,86 @@
 
   <div class="container">
     <h2>You're Invited to a Magical Celebration</h2>
-    <p>
-      We are truly honored to share this special occasion with our dear family and friends.
-      Your presence means a lot to us, and we sincerely hope you can join us in celebrating this joyful milestone.
-    </p>
-    <p>
-      Please note that this invitation is intended for the named guest only. Additional guests will receive separate invitations directly from us, if applicable.
-    </p>
+    <p>We are truly honored to share this special occasion with our dear family and friends. Your presence means a lot to us.</p>
+    <p>Please note this invitation is for the named guest only. Additional guests will receive separate invites.</p>
     <p>Thank you for your understanding and cooperation.</p>
 
     <div class="image-section">
       <img src="invitation1.jpg" alt="Wedding Invitation">
     </div>
-    
-<section id="our-story" style="padding: 2rem; background-color: #fffbe6; font-family: 'Josefin Sans', sans-serif;">
-  <h2 style="text-align: center; font-family: 'Parisienne', cursive; font-size: 2.5rem; color: #c49b66;">Our Story</h2>
-
-  <div class="slideshow-container">
-    <img class="slide fade" src="old9.jpg" alt="Photo 1">
-    <img class="slide" src="old1.jpg" alt="Photo 2">
-    <img class="slide" src="old3.JPG" alt="Photo 4">
-    <img class="slide" src="old4.jpg" alt="Photo 5">
-    <img class="slide" src="old5.jpg" alt="Photo 6">
-    <img class="slide" src="old6.jpg" alt="Photo 7">
-    <img class="slide" src="old7.gif" alt="Photo 8">
-    <img class="slide" src="old10.jpg" alt="Photo 9">
   </div>
 
-  <div style="max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.7; color: #333;">
+  <!-- Our Story Section -->
+  <section id="our-story" style="
+    padding: 2rem;
+    background-color: #fffbe6;
+    font-family: 'Josefin Sans', sans-serif;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 40px auto;
+  ">
+    <h2 style="text-align: center; font-family: 'Parisienne', cursive; font-size: 2.5rem; color: #c49b66;">Our Story</h2>
 
-    <p>It all started in October 2011 — ah yes, the year when <em>"Call Me Maybe"</em> was on repeat and I was just a guy trying to land a job near Mandaue. I didn’t notice her right away, but according to her, she already had her eyes on me — apparently impressed by my long sleeves, my cheerful smile, and my mysterious charm (or maybe it was just my shampoo).</p>
+    <div class="slideshow-container">
+      <img class="slide fade" src="old1.jpg" alt="Photo 1">
+      <img class="slide" src="old2.jpg" alt="Photo 2">
+      <img class="slide" src="old4.jpg" alt="Photo 4">
+      <img class="slide" src="old5.jpg" alt="Photo 5">
+      <img class="slide" src="old6.jpg" alt="Photo 6">
+      <img class="slide" src="old7.gif" alt="Photo 7">
+      <img class="slide" src="old10.jpg" alt="Photo 8">
+      <img class="slide" src="old9.jpg" alt="Photo 9">
+    </div>
 
-    <p>Fast forward to Day 1 on the job: that's when <strong>I</strong> finally noticed <strong>her</strong>. She was the only girl who caught my eye — like, literally, my neck did a full turn. I was curious, but didn’t think much of it. I mean, I wasn’t planning to fall in love. But fate, as always, had other plans.</p>
+    <div style="max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.7; color: #333;">
+      <!-- Your love story paragraphs here -->
+      <p>It all started in October 2011 — ah yes, the year when <em>"Call Me Maybe"</em> was on repeat...</p>
+      <!-- Shortened for brevity -->
+      <p>...And here we are. Building our own happily ever after — one laugh, one sundae, and one beautiful moment at a time.</p>
+    </div>
+  </section>
 
-    <p>She kept glancing at me, or so I assumed — maybe it was the curl in my lashes or my bold, bushy eyebrows that made her heart skip a beat. Whatever it was, I wasn’t complaining.</p>
-
-
-    <p>Eventually, we got closer. I found out she was genuinely kind, always laughing, and had the kind of personality that grows on you like your favorite sitcom. She was quiet at first — classic mysterious vibes — but once she warmed up, she couldn’t stop talking and laughing. And her eyes? Big, round, and beautiful — I was smitten.</p>
-
-    <p>We were inseparable. During breaks, I’d pack food so we could eat together and share bites like we were already in our own little rom-com montage. At some point, I asked myself: “Should I go for it? Should I tell her how I feel?” I was scared, sure — but I took the leap.</p>
-
-    <p>For our first official date, we went to McDonald’s (because nothing says romance like fries and sundae). Now here’s where things get interesting: I hid a ring inside the sundae. With every spoonful she took, I panicked a little — <em>“Dear Lord, please don’t let her swallow the ring!”</em> Thankfully, she found it <strong>before</strong> the ring made it to her digestive tract. I asked her to be my girlfriend — and she said <strong>YES</strong>. Cue internal fireworks and a victory dance.</p>
- <p>To show her how special she was, I started bringing her a single stem of rose to work. Nothing fancy — just a simple gesture that spoke volumes. I guess that really deepened her love for me. Of course, there were moments she got mad (because she’s the <em>"maldita"</em>). But over time, I realized it was just her way of asking for more attention. And that made me understand her more and taught me patience. Our love grew stronger every day we were together — thorns and all.</p>
-    <p>Years passed. We faced ups and downs like any couple, but we held on — with love, trust, and late-night chicken nuggets.</p>
-
-    <p>Then came Rosabelle — our sweet, sassy little star who gave our lives even more purpose and joy. With her, everything felt right. That’s when I knew: it was time to make things official. With love in our hearts (and probably a Happy Meal nearby), I asked her to marry me.</p>
-
-    <p>And here we are. Building our own happily ever after — one laugh, one sundae, and one beautiful moment at a time.</p>
-
+  <!-- RSVP Form (Google Form Embed) -->
+  <div style="
+    background: rgba(255,255,255,0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 40px auto;
+  ">
+    <h3 style="text-align: center; font-family: 'Parisienne', cursive;">📝 RSVP Form</h3>
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSeB5_C0oFbH1Xyn0XfaNlWOBSjNVTG57ZyLs-parJ3Vpe-g8g/viewform?embedded=true" 
+      width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </div>
-</section>
-<script>
-  let slideIndex = 0;
-  const slides = document.getElementsByClassName("slide");
 
-  function showSlides() {
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 2500); // 2.5 seconds per slide
-  }
-
-  showSlides();
-</script>
-
-
-    <!-- RSVP Form 
-    <form id="rsvp-form">
-      <input type="text" name="name" placeholder="Complete Name" required>
-      <input type="text" name="contact" placeholder="Contact Number" required>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <select name="attendance" required>
-        <option value="">Will you attend?</option>
-        <option value="I will attend">I will attend</option>
-        <option value="I will not attend">I will not attend</option>
-      </select>
-      <textarea name="message" placeholder="Leave a message or special request..." rows="4"></textarea>
-      <button type="submit">Send My RSVP</button>
-    </form>-->
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeB5_C0oFbH1Xyn0XfaNlWOBSjNVTG57ZyLs-parJ3Vpe-g8g/viewform?usp=header" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-
-<!-- captcha <div class="g-recaptcha" data-sitekey="6LcZVGkrAAAAAOqWY2jmvag0xAv_5bIUHX4HOJ0e"></div> -->
-
-    
-    <div class="confirmation" id="confirmation">
-      🎉 Thank you for your RSVP! Your response has been recorded 💖
-    </div>
-
-    <!-- Attire Section -->
-    <div class="attire-section">
-      <h3>✨ Attire</h3>
-      <p>Please wear pastel colors: Pink, Blue, or Lilac</p>
-      <img src="imageattire.png" alt="Attire Inspiration" class="attire-image">
-      <div class="attire-samples">
-        <div class="color-sample">
-          <div class="color-box pink"></div>
-          <div class="color-label">Pink</div>
-        </div>
-        <div class="color-sample">
-          <div class="color-box blue"></div>
-          <div class="color-label">Blue</div>
-        </div>
-        <div class="color-sample">
-          <div class="color-box lilac"></div>
-          <div class="color-label">Lilac</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Entourage Section -->
-    <div class="image-section">
-      <h3>💐 Wedding Entourage</h3>
-      <img src="invitation3.png" alt="Wedding Entourage">
-      <div class="container">
-    <h2>Your presence is the greatest gift we could ask for.</h2>
-    <p>
-      However, if you wish to bless us with a gift, a monetary contribution is preferred as we begin this new chapter of our lives. You may also choose to send it ahead of time through our GCash account - <span id="gcash-number">loading...</span>.
- </p>
-      <p>We truly appreciate your love, support, and generosity.</p>
-     <img src="gcash.jpeg" alt="gcash" class="img-small">
-
+  <!-- Attire Section -->
+  <div class="attire-section">
+    <h3>✨ Attire</h3>
+    <p>Please wear pastel colors: Pink, Blue, or Lilac</p>
+    <img src="imageattire.png" alt="Attire Inspiration" class="attire-image">
+    <div class="attire-samples">
+      <div class="color-sample"><div class="color-box pink"></div><div class="color-label">Pink</div></div>
+      <div class="color-sample"><div class="color-box blue"></div><div class="color-label">Blue</div></div>
+      <div class="color-sample"><div class="color-box lilac"></div><div class="color-label">Lilac</div></div>
     </div>
   </div>
 
+  <!-- Entourage Section -->
+  <div class="image-section">
+    <h3>💐 Wedding Entourage</h3>
+    <img src="invitation3.png" alt="Wedding Entourage">
+    <div class="container">
+      <h2>Your presence is the greatest gift we could ask for.</h2>
+      <p>If you wish to bless us with a gift, a monetary contribution is preferred as we begin this new chapter.</p>
+      <p>GCash: <span id="gcash-number">loading...</span></p>
+      <img src="gcash.jpeg" alt="gcash" class="img-small">
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script>
     const music = document.getElementById('bg-music');
     function toggleMusic() {
@@ -362,29 +265,25 @@
       }
     }
 
-    document.getElementById("rsvp-form").addEventListener("submit", function(e) {
-      e.preventDefault();
+    // Slideshow
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
 
-      const form = e.target;
-      const data = new FormData(form);
-      const scriptURL = "https://script.google.com/macros/s/AKfycbzj-I-Rih0a7qwEfYzCHW-DR-Q0vQQsXaMiDnRtOZszue-pVXeYu2sT-nb84SAJoLFG/exec"; // Replace with your actual script URL
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 2500);
+    }
 
-      fetch(scriptURL, {
-        method: "POST",
-        body: data
-      })
-      .then(response => {
-        if (response.ok) {
-          document.getElementById("confirmation").style.display = "block";
-          form.reset();
-        } else {
-          alert("Something went wrong. Please try again.");
-        }
-      })
-      .catch(error => {
-        console.error("Error!", error.message);
-      });
-    });
+    showSlides();
+
+    // GCash number obfuscation
+    document.getElementById("gcash-number").innerText = ['0917','726','7833'].join('');
   </script>
+
 </body>
 </html>

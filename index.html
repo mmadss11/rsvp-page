@@ -203,12 +203,15 @@
   display: block;
 }
 
-
-
-
-
   </style>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
+  
+  <script>
+  document.getElementById("gcash-number").innerText = ['0917','726','7833'].join('');
+</script>
+
 <body>
 
   <!-- Music Toggle -->
@@ -290,7 +293,7 @@
 </script>
 
 
-    <!-- RSVP Form -->
+    <!-- RSVP Form 
     <form id="rsvp-form">
       <input type="text" name="name" placeholder="Complete Name" required>
       <input type="text" name="contact" placeholder="Contact Number" required>
@@ -302,8 +305,13 @@
       </select>
       <textarea name="message" placeholder="Leave a message or special request..." rows="4"></textarea>
       <button type="submit">Send My RSVP</button>
-    </form>
+    </form>-->
 
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeB5_C0oFbH1Xyn0XfaNlWOBSjNVTG57ZyLs-parJ3Vpe-g8g/viewform?usp=header" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+<!-- captcha <div class="g-recaptcha" data-sitekey="6LcZVGkrAAAAAOqWY2jmvag0xAv_5bIUHX4HOJ0e"></div> -->
+
+    
     <div class="confirmation" id="confirmation">
       🎉 Thank you for your RSVP! Your response has been recorded 💖
     </div>
@@ -336,7 +344,8 @@
       <div class="container">
     <h2>Your presence is the greatest gift we could ask for.</h2>
     <p>
-      However, if you wish to bless us with a gift, a monetary contribution is preferred as we begin this new chapter of our lives. You may also choose to send it ahead of time through our GCash account - 09177267833. </p>
+      However, if you wish to bless us with a gift, a monetary contribution is preferred as we begin this new chapter of our lives. You may also choose to send it ahead of time through our GCash account - <span id="gcash-number">loading...</span>.
+ </p>
       <p>We truly appreciate your love, support, and generosity.</p>
      <img src="gcash.jpeg" alt="gcash" class="img-small">
 

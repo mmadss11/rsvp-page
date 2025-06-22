@@ -125,37 +125,21 @@
       margin: 0 auto;
     }
 
-<div class="slideshow-container">
-  <img class="slide fade" src="old1.jpg" alt="Photo 1">
-  <img class="slide" src="old2.gif" alt="Photo 2">
-  <img class="slide" src="old4.jpg" alt="Photo 4">
-  <img class="slide" src="old5.jpg" alt="Photo 5">
-  <img class="slide" src="old6.jpg" alt="Photo 6">
-  <img class="slide" src="old7.gif" alt="Photo 7">
-  <img class="slide" src="old10.jpg" alt="Photo 8">
-  <img class="slide" src="old9.jpg" alt="Photo 9">
-  <img class="slide" src="old11.jpeg" alt="Photo 10">
-  <img class="slide" src="old12.jpeg" alt="Photo 11">
-
-  <!-- Navigation buttons -->
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
-</div>
-
-<!-- Dot navigation -->
-<div class="dot-container" style="text-align:center; margin-top: 15px;">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-  <span class="dot" onclick="currentSlide(5)"></span>
-  <span class="dot" onclick="currentSlide(6)"></span>
-  <span class="dot" onclick="currentSlide(7)"></span>
-  <span class="dot" onclick="currentSlide(8)"></span>
-  <span class="dot" onclick="currentSlide(9)"></span>
-  <span class="dot" onclick="currentSlide(10)"></span>
-</div>
-
+    .slideshow-container {
+      width: 100%;
+      max-width: 800px;
+      height: 600px;
+      position: relative;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.85);
+      color: #333;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
 .slide {
   position: absolute;
@@ -234,48 +218,6 @@
     font-size: 1.2rem;
   }
 }
-/* Arrows */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 12px;
-  margin-top: -22px;
-  color: #6b3e6b;
-  font-weight: bold;
-  font-size: 28px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  background-color: rgba(255,255,255,0.7);
-  transition: 0.3s;
-  z-index: 2;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(255, 192, 203, 0.8);
-}
-
-/* Dots */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 5px;
-  background-color: #c8a2c8;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-
-.active-dot, .dot:hover {
-  background-color: #6b3e6b;
-}
 
   </style>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -337,7 +279,7 @@
     </div>
 
     <div style="font-size: 1.1rem; line-height: 1.7; color: #333; padding-top: 1rem;">
-    <p>It all started in October 2010 — ah yes, the year when <em>"Call Me Maybe"</em> was on repeat and I was just a guy trying to land a job near Mandaue. I didn’t notice her right away, but according to her, she already had her eyes on me — apparently impressed by my long sleeves, my cheerful smile, and my mysterious charm (or maybe it was just my shampoo).</p>
+    <p>It all started in October 2011 — ah yes, the year when <em>"Call Me Maybe"</em> was on repeat and I was just a guy trying to land a job near Mandaue. I didn’t notice her right away, but according to her, she already had her eyes on me — apparently impressed by my long sleeves, my cheerful smile, and my mysterious charm (or maybe it was just my shampoo).</p>
 
     <p>Fast forward to Day 1 on the job: that's when <strong>I</strong> finally noticed <strong>her</strong>. She was the only girl who caught my eye — like, literally, my neck did a full turn. I was curious, but didn’t think much of it. I mean, I wasn’t planning to fall in love. But fate, as always, had other plans.</p>
 
@@ -349,8 +291,8 @@
     <p>We were inseparable. During breaks, I’d pack food so we could eat together and share bites like we were already in our own little rom-com montage. At some point, I asked myself: “Should I go for it? Should I tell her how I feel?” I was scared, sure — but I took the leap.</p>
 
     <p>For our first official date, we went to McDonald’s (because nothing says romance like fries and sundae). Now here’s where things get interesting: I hid a ring inside the sundae. With every spoonful she took, I panicked a little — <em>“Dear Lord, please don’t let her swallow the ring!”</em> Thankfully, she found it <strong>before</strong> the ring made it to her digestive tract. I asked her to be my girlfriend — and she said <strong>YES</strong>. Cue internal fireworks and a victory dance.</p>
- <p>To show her how special she was, I started bringing her a single stem of rose to work. Nothing fancy — just a simple gesture that spoke volumes. I guess that really deepened her love for me. </p>
-    <p>As the years went by, we faced our share of ups and downs like any couple. But through it all, we held on—with love, trust, and countless late-night pancit canton moments. Our love only grew stronger with each passing day—thorns and all.</p>
+ <p>To show her how special she was, I started bringing her a single stem of rose to work. Nothing fancy — just a simple gesture that spoke volumes. I guess that really deepened her love for me. Of course, there were moments she got mad (because she’s the <em>"maldita"</em>). But over time, I realized it was just her way of asking for more attention. And that made me understand her more and taught me patience. Our love grew stronger every day we were together — thorns and all.</p>
+    <p>Years passed. We faced ups and downs like any couple, but we held on — with love, trust, and late-night chicken nuggets.</p>
 
     <p>Then came Rosabelle — our sweet, sassy little star who gave our lives even more purpose and joy. With her, everything felt right. That’s when I knew: it was time to make things official. With love in our hearts (and probably a Happy Meal nearby), I asked her to marry me.</p>
 
@@ -497,41 +439,20 @@
   window.addEventListener('touchstart', enableMusicOnFirstTouch);
 
   // 🎞️ Slideshow Fade
-
-let slideIndex = 1;
-showSlides(slideIndex);
-
-// Arrow controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Dot controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-// Display the slides
-function showSlides(n) {
-  let i;
+  let slideIndex = 0;
   const slides = document.querySelectorAll(".slide");
-  const dots = document.querySelectorAll(".dot");
-  if (n > slides.length) { slideIndex = 1; }
-  if (n < 1) { slideIndex = slides.length; }
 
-  slides.forEach(slide => slide.classList.remove("active"));
-  dots.forEach(dot => dot.classList.remove("active-dot"));
+  function showSlides() {
+    slides.forEach((slide) => slide.classList.remove("active"));
+    slideIndex++;
+    if (slideIndex > slides.length) slideIndex = 1;
+    slides[slideIndex - 1].classList.add("active");
+  }
 
-  slides[slideIndex - 1].classList.add("active");
-  dots[slideIndex - 1].classList.add("active-dot");
-}
-
-// Optional: Auto-advance
-setInterval(() => {
-  plusSlides(1);
-}, 3000);
-
-
+  if (slides.length) {
+    showSlides(); // Show first slide immediately
+    setInterval(showSlides, 3000); // Rotate every 3s
+  }
 
   // ⏳ Countdown
   function updateCountdown() {

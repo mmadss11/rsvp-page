@@ -224,36 +224,31 @@
     font-size: 1.2rem;
   }
 }
-.slideshow-container .prev,
-.slideshow-container .next {
+.slideshow-nav {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.slideshow-nav .prev,
+.slideshow-nav .next {
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 12px;
-  margin-top: -22px;
+  padding: 12px 20px;
   color: #6b3e6b;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   border: none;
-  background: rgba(255,255,255,0.7);
-  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 30px;
+  margin: 0 10px;
   user-select: none;
   transition: background 0.3s;
 }
 
-.slideshow-container .prev:hover,
-.slideshow-container .next:hover {
-  background: rgba(255,255,255,0.9);
+.slideshow-nav .prev:hover,
+.slideshow-nav .next:hover {
+  background: rgba(255, 255, 255, 1);
 }
 
-.slideshow-container .prev {
-  left: 10px;
-}
-
-.slideshow-container .next {
-  right: 10px;
-}
 
   </style>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -333,11 +328,13 @@
       <img class="slide" src="prenup21.jpg" alt="Photo 223">
       <img class="slide" src="prenup22.jpg" alt="Photo 224">
 
-        <!-- Navigation buttons -->
+    </div>
+
+<div class="slideshow-nav">
   <button class="prev" onclick="plusSlides(-1)">❮ Back</button>
   <button class="next" onclick="plusSlides(1)">Next ❯</button>
-      
-    </div>
+</div>
+    
 <h3 style="color: #6b3e6b; font-family: 'Parisienne', cursive; font-size: 2rem;">💖 Our Story</h3>
     <div style="font-size: 1.1rem; line-height: 1.7; color: #333; padding-top: 1rem;">
  <p><strong>It all started in October 2010</strong> — back when <em>“Just the Way You Are”</em> was on the radio 24/7, and I was just a guy trying to land a job near Mandaue.</p>

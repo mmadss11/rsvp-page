@@ -224,29 +224,70 @@
     font-size: 1.2rem;
   }
 }
-.slideshow-nav {
-  text-align: center;
-  margin-top: 10px;
+.slideshow-wrapper {
+  position: relative; /* Parent for absolute buttons */
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  margin: 2rem auto;
 }
 
-.slideshow-nav .prev,
-.slideshow-nav .next {
-  cursor: pointer;
-  padding: 12px 20px;
+.slideshow-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Floating nav buttons */
+.slideshow-wrapper .prev,
+.slideshow-wrapper .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  font-size: 20px;
   color: #6b3e6b;
   font-weight: bold;
-  font-size: 18px;
-  border: none;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 30px;
-  margin: 0 10px;
+  cursor: pointer;
   user-select: none;
   transition: background 0.3s;
 }
 
-.slideshow-nav .prev:hover,
-.slideshow-nav .next:hover {
-  background: rgba(255, 255, 255, 1);
+.slideshow-wrapper .prev:hover,
+.slideshow-wrapper .next:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.slideshow-wrapper .prev {
+  left: 10px;
+}
+
+.slideshow-wrapper .next {
+  right: 10px;
 }
 
 
@@ -291,9 +332,10 @@
   </div>
 
   <!-- Our Story -->
+ 
   <div class="container">
 <!-- <section id="our-story" style="padding: 2rem; background-color: #fffbe6; font-family: 'Josefin Sans', sans-serif; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 800px; margin: 40px auto; position: relative; z-index: 1;"> -->
-    
+     <div class="slideshow-wrapper">
     <div class="slideshow-container">
       <img class="slide fade" src="old1.jpg" alt="Photo 1">
       <img class="slide" src="old2.gif" alt="Photo 2">
@@ -330,7 +372,6 @@
 
     </div>
 
-<div class="slideshow-nav">
   <button class="prev" onclick="plusSlides(-1)">❮ Back</button>
   <button class="next" onclick="plusSlides(1)">Next ❯</button>
 </div>

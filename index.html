@@ -218,6 +218,36 @@
     font-size: 1.2rem;
   }
 }
+.slideshow-container .prev,
+.slideshow-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 12px;
+  margin-top: -22px;
+  color: #6b3e6b;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  user-select: none;
+  transition: background 0.3s;
+}
+
+.slideshow-container .prev:hover,
+.slideshow-container .next:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+.slideshow-container .prev {
+  left: 10px;
+}
+
+.slideshow-container .next {
+  right: 10px;
+}
 
   </style>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -297,7 +327,9 @@
       <img class="slide" src="prenup21.jpg" alt="Photo 223">
       <img class="slide" src="prenup22.jpg" alt="Photo 224">
 
-      
+        <!-- Navigation buttons -->
+  <button class="prev" onclick="plusSlides(-1)">❮ Back</button>
+  <button class="next" onclick="plusSlides(1)">Next ❯</button>
       
     </div>
 <h3 style="color: #6b3e6b; font-family: 'Parisienne', cursive; font-size: 2rem;">💖 Our Story</h3>
@@ -465,21 +497,39 @@
   window.addEventListener('click', enableMusicOnFirstTouch);
   window.addEventListener('touchstart', enableMusicOnFirstTouch);
 
-  // 🎞️ Slideshow Fade
-  let slideIndex = 0;
-  const slides = document.querySelectorAll(".slide");
 
-  function showSlides() {
-    slides.forEach((slide) => slide.classList.remove("active"));
-    slideIndex++;
-    if (slideIndex > slides.length) slideIndex = 1;
-    slides[slideIndex - 1].classList.add("active");
-  }
+// 🎞️ Slideshow Fade with Next/Back
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+let slideInterval;
 
-  if (slides.length) {
-    showSlides(); // Show first slide immediately
-    setInterval(showSlides, 3000); // Rotate every 3s
-  }
+function showSlides() {
+  slides.forEach((slide) => slide.classList.remove("active"));
+  slideIndex++;
+  if (slideIndex > slides.length) slideIndex = 1;
+  slides[slideIndex - 1].classList.add("active");
+}
+
+function plusSlides(n) {
+  slides.forEach((slide) => slide.classList.remove("active"));
+  slideIndex += n;
+  if (slideIndex > slides.length) slideIndex = 1;
+  if (slideIndex < 1) slideIndex = slides.length;
+  slides[slideIndex - 1].classList.add("active");
+  resetInterval();
+}
+
+function resetInterval() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(showSlides, 3000);
+}
+
+if (slides.length) {
+  showSlides(); // Show first slide immediately
+  slideInterval = setInterval(showSlides, 3000); // Auto-scroll every 3s
+}
+
+
 
   // ⏳ Countdown
   function updateCountdown() {

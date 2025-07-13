@@ -148,12 +148,15 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  pointer-events: none; /* 👈 ADD THIS! */
 }
 
 .slide.active {
   opacity: 1;
   z-index: 1;
+  pointer-events: auto; /* optional: slides don't need pointer events */
 }
+
 
 .fade {
   transition: opacity 1s ease-in-out;

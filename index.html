@@ -155,7 +155,10 @@
   z-index: 1;
 }
 
-
+.fade {
+  transition: opacity 1s ease-in-out;
+}
+    
     iframe {
       border-radius: 15px;
       overflow: hidden;
@@ -504,20 +507,25 @@ const slides = document.querySelectorAll(".slide");
 let slideInterval;
 
 function showSlides() {
-  slides.forEach((slide) => slide.classList.remove("active"));
   slideIndex++;
   if (slideIndex > slides.length) slideIndex = 1;
-  slides[slideIndex - 1].classList.add("active");
+  showSlideNow(slideIndex);
 }
 
+
 function plusSlides(n) {
-  slides.forEach((slide) => slide.classList.remove("active"));
   slideIndex += n;
   if (slideIndex > slides.length) slideIndex = 1;
   if (slideIndex < 1) slideIndex = slides.length;
-  slides[slideIndex - 1].classList.add("active");
+  showSlideNow(slideIndex);
   resetInterval();
 }
+
+function showSlideNow(index) {
+  slides.forEach((slide) => slide.classList.remove("active"));
+  slides[index - 1].classList.add("active");
+}
+
 
 function resetInterval() {
   clearInterval(slideInterval);
